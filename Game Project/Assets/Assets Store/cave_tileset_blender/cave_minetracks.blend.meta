@@ -2,7 +2,82 @@ fileFormatVersion: 2
 guid: 2ea5683bc2c0741e7ac458c50b70e846
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 6124132930092855946
+    second: TrackStraight2|CDA:ObIpo
+  - first:
+      74: 385602506956425314
+    second: TrackStraight2|CDA:ObIpo.001
+  - first:
+      74: 7223598817106875904
+    second: TrackStraight2|CDA:ObIpo.002
+  - first:
+      74: -8428236776513056047
+    second: TrackStraight2|CDA:ObIpo.003
+  - first:
+      74: -8253294384539607279
+    second: TrackStraight2|CDA:ObIpo.004
+  - first:
+      74: -4615310357811283264
+    second: TrackSplitR|CDA:ObIpo
+  - first:
+      74: 8390524265701372248
+    second: TrackSplitR|CDA:ObIpo.001
+  - first:
+      74: 8712324441521455845
+    second: TrackSplitR|CDA:ObIpo.002
+  - first:
+      74: -6884913342700625151
+    second: TrackSplitR|CDA:ObIpo.003
+  - first:
+      74: -5649181563632267254
+    second: TrackSplitR|CDA:ObIpo.004
+  - first:
+      74: -4390230264417887928
+    second: TrackCurve|CDA:ObIpo
+  - first:
+      74: -4642691599912263074
+    second: TrackCurve|CDA:ObIpo.001
+  - first:
+      74: -6644365602253281220
+    second: TrackCurve|CDA:ObIpo.002
+  - first:
+      74: 1023398805031337902
+    second: TrackCurve|CDA:ObIpo.003
+  - first:
+      74: -5075902030981775117
+    second: TrackCurve|CDA:ObIpo.004
+  - first:
+      74: 7911587386752033504
+    second: TrackSplitL|CDA:ObIpo
+  - first:
+      74: -7085335561403722242
+    second: TrackSplitL|CDA:ObIpo.001
+  - first:
+      74: 2747416091710977454
+    second: TrackSplitL|CDA:ObIpo.002
+  - first:
+      74: -3782873128797576398
+    second: TrackSplitL|CDA:ObIpo.003
+  - first:
+      74: 1048983449713149804
+    second: TrackSplitL|CDA:ObIpo.004
+  - first:
+      74: 6844921592141751769
+    second: TrackStraight1|CDA:ObIpo
+  - first:
+      74: -1509150944745881791
+    second: TrackStraight1|CDA:ObIpo.001
+  - first:
+      74: 2959106787583270402
+    second: TrackStraight1|CDA:ObIpo.002
+  - first:
+      74: 4955324928375688306
+    second: TrackStraight1|CDA:ObIpo.003
+  - first:
+      74: -7659694080665062589
+    second: TrackStraight1|CDA:ObIpo.004
   externalObjects: {}
   materials:
     importMaterials: 1

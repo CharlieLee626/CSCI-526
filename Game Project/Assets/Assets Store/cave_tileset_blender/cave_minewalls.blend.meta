@@ -2,7 +2,34 @@ fileFormatVersion: 2
 guid: 45a752ce58b6a402b84a95511c548d1f
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -8002154260534723529
+    second: basewall.002|CDA:ObIpo.015
+  - first:
+      74: -3230032110958967132
+    second: basewall.002|CDA:ObIpo.016
+  - first:
+      74: 8732797292752962029
+    second: basewall.002|CDA:ObIpo.017
+  - first:
+      74: -4255313789787063523
+    second: wallstud|CDA:ObIpo.015
+  - first:
+      74: 7934830913020069484
+    second: wallstud|CDA:ObIpo.016
+  - first:
+      74: -8720144721764109702
+    second: wallstud|CDA:ObIpo.017
+  - first:
+      74: 5274441633269001466
+    second: wallwood|CDA:ObIpo.015
+  - first:
+      74: -1994193351380686448
+    second: wallwood|CDA:ObIpo.016
+  - first:
+      74: -7301458151129836066
+    second: wallwood|CDA:ObIpo.017
   externalObjects: {}
   materials:
     importMaterials: 1
