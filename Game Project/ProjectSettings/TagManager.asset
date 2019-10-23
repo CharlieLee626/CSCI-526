@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Spawnpoints
   - Fire
+  - patrolpath
   layers:
   - Default
   - TransparentFX

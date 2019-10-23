@@ -6,12 +6,14 @@ public class PlayerMovement2D : MonoBehaviour
 {
 
     public CharacterController2D controller;
+    public Animator animator;
 
     public float runSpeed = 40f;
 
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
+    bool atk = false;
 
     // Update is called once per frame
     void Update()
@@ -19,9 +21,12 @@ public class PlayerMovement2D : MonoBehaviour
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
+
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            animator.SetBool("isJumping", true);
         }
 
         if (Input.GetButtonDown("Crouch"))
@@ -32,7 +37,34 @@ public class PlayerMovement2D : MonoBehaviour
         {
             crouch = false;
         }
+        AtkInput();
+    }
 
+    public void OnLanding()
+    {
+        animator.SetBool("isJumping", false);
+    }
+
+    void Attacks()
+
+    {
+        if(atk)
+        {
+            animator.SetTrigger("attack");
+        }
+    }
+
+    void AtkInput()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            atk = true;
+        }
+    }
+
+    void endAttack()
+    {
+        atk = false;
     }
 
     void FixedUpdate()
@@ -40,5 +72,7 @@ public class PlayerMovement2D : MonoBehaviour
         // Move our character
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
+        Attacks();
+        endAttack();
     }
 }
