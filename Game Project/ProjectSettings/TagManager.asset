@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Spawnpoints
   - Fire
+  - patrolpath
+  - Slime
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Ground
   - Interactable Item
   - Player
-  - 
+  - Enemy
   - 
   - 
   - 
