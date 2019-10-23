@@ -12,29 +12,20 @@ public class PlayerAttack2d : MonoBehaviour
     public Animator animator2;
     public int damage;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public void BtnAttack()
     {
-        if (timeBtwAtk <= 0)
-        {
-            if (Input.GetButtonDown("Fire1"))
+       
+     
+            animator2.SetTrigger("attack");
+            Collider2D[] enemiesToDmg = Physics2D.OverlapCircleAll(attackPos.position, attackRange, onlyEnemy);
+            for (int i = 0; i < enemiesToDmg.Length; i++)
             {
-                animator2.SetTrigger("attack");
-                Collider2D[] enemiesToDmg = Physics2D.OverlapCircleAll(attackPos.position, attackRange, onlyEnemy);
-                for (int i = 0; i < enemiesToDmg.Length; i++)
-                {
-                    enemiesToDmg[i].GetComponent<Slime>().TakeDamage(damage);
-                }
-                timeBtwAtk = startTimeBtwAtk;
+                enemiesToDmg[i].GetComponent<Slime>().TakeDamage(damage);
             }
-        }
-        else
-            timeBtwAtk -= Time.deltaTime;   
+            timeBtwAtk = startTimeBtwAtk;
+      
+
     }
 
     private void OnDrawGizmosSelected()
