@@ -1438,16 +1438,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Graphic
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: e4e3a13b91d0f4734b5d397d165b3535,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: cd74cb150725f4864be8b6a1b0a58810, type: 2}
-    - target: {fileID: -6057140222963153312, guid: e4e3a13b91d0f4734b5d397d165b3535,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e4e3a13b91d0f4734b5d397d165b3535,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1501,6 +1491,16 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e4e3a13b91d0f4734b5d397d165b3535,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: e4e3a13b91d0f4734b5d397d165b3535,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cd74cb150725f4864be8b6a1b0a58810, type: 2}
+    - target: {fileID: -6057140222963153312, guid: e4e3a13b91d0f4734b5d397d165b3535,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
