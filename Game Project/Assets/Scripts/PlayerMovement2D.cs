@@ -7,37 +7,48 @@ public class PlayerMovement2D : MonoBehaviour
 
     public CharacterController2D controller;
     public Animator animator;
+    public Joystick joystick;
 
     public float runSpeed = 40f;
 
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
-    bool atk = false;
 
     // Update is called once per frame
     void Update()
     {
 
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        if (joystick.Horizontal >= .2f)
+        {
+            horizontalMove = runSpeed;
+        }
+        else if (joystick.Horizontal < -.2f)
+        {
+            horizontalMove = -runSpeed;
+        }
+        else
+            horizontalMove = 0f;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
+        float verticalMove = joystick.Vertical;
+
+        if (verticalMove >= .5f)
         {
             jump = true;
             animator.SetBool("isJumping", true);
         }
 
-        if (Input.GetButtonDown("Crouch"))
+        if (verticalMove <= -.5f)
         {
             crouch = true;
         }
-        else if (Input.GetButtonUp("Crouch"))
+        else
         {
             crouch = false;
         }
-        AtkInput();
+
     }
 
     public void OnLanding()
@@ -45,34 +56,11 @@ public class PlayerMovement2D : MonoBehaviour
         animator.SetBool("isJumping", false);
     }
 
-    void Attacks()
-
-    {
-        if(atk)
-        {
-            animator.SetTrigger("attack");
-        }
-    }
-
-    void AtkInput()
-    {
-        if(Input.GetButtonDown("Fire1"))
-        {
-            atk = true;
-        }
-    }
-
-    void endAttack()
-    {
-        atk = false;
-    }
 
     void FixedUpdate()
     {
         // Move our character
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
-        Attacks();
-        endAttack();
     }
 }
