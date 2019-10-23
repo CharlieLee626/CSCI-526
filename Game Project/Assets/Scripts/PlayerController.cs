@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
+        /*
         // If we press left mouse
         if (Input.GetMouseButtonDown(0))
         {
@@ -47,9 +48,10 @@ public class PlayerController : MonoBehaviour
                 SetFocus(null);
             }
         }
+        */
 
         // If we press right mouse
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             // Shoot out a ray
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
