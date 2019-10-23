@@ -15,12 +15,21 @@ public class CameraController : MonoBehaviour
     private float pitch = 2f;
     private float currentYaw = 0f;
 
+    public Joystick joystick;
+
     private void Update()
     {
-        currentZoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
-        currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
+        if(joystick.Vertical >= .5f || joystick.Vertical <= -0.5f)
+        {
+            currentZoom -= joystick.Vertical * zoomSpeed;
+            currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
+        }
 
-        currentYaw -= Input.GetAxis("Horizontal") * yawSpeed * Time.deltaTime;
+        if(joystick.Horizontal >= .8f || joystick.Horizontal <= -0.8f)
+        {
+            currentYaw -= joystick.Horizontal * yawSpeed * Time.deltaTime;
+        }
+        
     }
 
 
