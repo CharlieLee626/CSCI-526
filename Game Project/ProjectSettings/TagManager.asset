@@ -8,6 +8,7 @@ TagManager:
   - Fire
   - patrolpath
   - Slime
+  - ShowOnPause
   layers:
   - Default
   - TransparentFX
