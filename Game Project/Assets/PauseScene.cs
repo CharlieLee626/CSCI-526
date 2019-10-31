@@ -9,7 +9,7 @@ public class PauseScene : MonoBehaviour
     public void PauseGame()
     {
         Paused.IsPaused = true;
-        // 2 represents MainMenu scene. Mapped to build settings
-        SceneManager.LoadScene(2, LoadSceneMode.Additive); 
+        GameOver.IsGameOver = false;
+        SceneManager.LoadScene("Menu", LoadSceneMode.Additive); 
     }
 }

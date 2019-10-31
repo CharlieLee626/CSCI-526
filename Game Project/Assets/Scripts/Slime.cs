@@ -54,6 +54,8 @@ public class Slime: MonoBehaviour
 
     public void OnDestroy()
     {
-        SceneManager.LoadScene("SampleScene");
+        //SceneManager.LoadScene("SampleScene");
+        GameOver.IsGameOver = true;
+        SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
     }
 }

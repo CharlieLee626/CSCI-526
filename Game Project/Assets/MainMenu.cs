@@ -10,28 +10,42 @@ public class MainMenu : MonoBehaviour
     public void Start()
     {
         pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
-        if (Paused.IsPaused)
+        GameObject.Find("GameOver").SetActive(GameOver.IsGameOver);
+        if (GameOver.IsGameOver)
         {
             Time.timeScale = 0;
-            showPaused();
+            hidePaused();
         }
         else
         {
             Time.timeScale = 1;
-            Paused.IsPaused = false;
-            hidePaused();
+            GameOver.IsGameOver = false;
+            if (Paused.IsPaused)
+            {
+                Time.timeScale = 0;
+                showPaused();
+            }
+            else
+            {
+                Time.timeScale = 1;
+                Paused.IsPaused = false;
+                hidePaused();
+            }
         }
+        
     }
 
     public void ContinueGame()
     {
         Time.timeScale = 1;
-        SceneManager.UnloadSceneAsync(2);
+        SceneManager.UnloadSceneAsync("Menu");
     }
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(0); // 0 represents SampleScene. Mapped to build settings
+        GameOver.IsGameOver = false;
+        Paused.IsPaused = false;
+        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
 
     public void QuitGame()
@@ -68,4 +82,9 @@ public class MainMenu : MonoBehaviour
 public static class Paused
 {
     public static bool IsPaused { get; set; }
+}
+
+public static class GameOver
+{
+    public static bool IsGameOver { get; set; }
 }
