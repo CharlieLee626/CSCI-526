@@ -8,9 +8,15 @@ public class Slime: MonoBehaviour
     public bool moveRight;
     public float speed;
     public int health;
+    public Animator animator3;
     // Start is called before the first frame update
+    private GameObject playerObj;
+    private GameObject slimeObj;
+
     void Start()
     {
+        playerObj = GameObject.Find("Player");
+        slimeObj = GameObject.Find("Slime");
         
     }
 
@@ -24,12 +30,18 @@ public class Slime: MonoBehaviour
         if(moveRight)
         {
             transform.Translate(2 * Time.deltaTime * speed, 0, 0);
-            transform.localScale = new Vector2(-7, 7);
+            transform.localScale = new Vector2(-10, 10);
         }
         else
         {
             transform.Translate(-2 * Time.deltaTime * speed, 0, 0);
-            transform.localScale = new Vector2(7, 7);
+            transform.localScale = new Vector2(10, 10);
+        }
+        
+        float distance = Vector2.Distance(playerObj.transform.position, slimeObj.transform.position);
+        if (distance < 3.0f)
+        {
+            animator3.Play("slimeanimation_atk");
         }
     }
 
